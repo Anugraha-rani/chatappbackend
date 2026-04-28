@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://chatapp-blond-six.vercel.app",
     methods: ["GET", "POST"],
   },
 });
@@ -101,10 +101,13 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = Number(process.env.PORT) || 5000;
+const PORT = process.env.PORT||5000  ;
 if (!process.env.PORT) {
-  console.warn("PORT is not set in .env, defaulting to 5000");
+  console.warn("PORT is not set in .env");
 }
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+server.get('/',(req,res)=>{
+    res.status(200).send(`<h1>Server started  & waiting for the client request</h1>`)
+})
