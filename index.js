@@ -108,6 +108,4 @@ if (!process.env.PORT) {
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-server.get('/',(req,res)=>{
-    res.status(200).send(`<h1>Server started  & waiting for the client request</h1>`)
-})
+
