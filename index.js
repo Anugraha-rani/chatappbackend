@@ -101,7 +101,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT||5000  ;
+const PORT = process.env.PORT || 5000  ;
 if (!process.env.PORT) {
   console.warn("PORT is not set in .env");
 }
