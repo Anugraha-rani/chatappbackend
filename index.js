@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ status: "ok" });
+  res.status(200).send(`<h1>Server started </h1>`)
 });
 
 const broadcastOnlineUsers = () => {
