@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chatapp-blond-six.vercel.app",
+    origin: "https://chatapp-blond-six.vercel.app/",
     methods: ["GET", "POST"],
   },
 });
@@ -20,7 +20,7 @@ const onlineUsers = new Map();
 app.use(cors());
 app.use(express.json());
 
-app.get("/health", (_, res) => {
+app.get("/", (req, res) => {
   res.json({ status: "ok" });
 });
 
